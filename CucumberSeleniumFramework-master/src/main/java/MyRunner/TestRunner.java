@@ -1,8 +1,16 @@
 package MyRunner;
 
 import org.junit.runner.RunWith;
+
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
+
+
+
+/*
+ * please enter OTP or tap on webpage  when login window is open with provided mobile number (inconsistency behavior in login)
+ * Not getting login page in every execution 
+ */
 
 	@RunWith(Cucumber.class)
 	
