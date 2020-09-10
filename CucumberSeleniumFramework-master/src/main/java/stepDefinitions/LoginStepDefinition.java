@@ -21,8 +21,8 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import programs.FlightClient;
-import programs.TestBase;
+import pageTests.FlightClient;
+import pageTests.TestBase;
 
 public class LoginStepDefinition extends TestBase{
 	public LoginStepDefinition(){

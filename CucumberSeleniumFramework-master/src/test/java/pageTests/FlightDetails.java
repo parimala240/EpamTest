@@ -1,4 +1,4 @@
-package programs;
+package pageTests;
 
 public class FlightDetails {
 	private String flightName;

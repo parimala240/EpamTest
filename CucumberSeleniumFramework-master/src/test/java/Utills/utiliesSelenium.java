@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import PageObjects.Homepageobjects;
-import programs.TestBase;
+import pageTests.TestBase;
 
 public class utiliesSelenium extends TestBase {
 	

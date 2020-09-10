@@ -1,4 +1,4 @@
-package programs;
+package pageTests;
 
 import java.io.File;
 import java.io.FileInputStream;
