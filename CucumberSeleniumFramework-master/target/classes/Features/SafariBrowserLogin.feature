@@ -12,5 +12,5 @@ Then Close the browser
 
 Examples:
 	| from      | to |loginPhoneNumber| browser |
-	| Hyderabad |Pune|9441650255|Chrome|
+	| Hyderabad |Pune|9441650255|Safari|
 	| Hyderabad |Pune|9441650255|Safari|

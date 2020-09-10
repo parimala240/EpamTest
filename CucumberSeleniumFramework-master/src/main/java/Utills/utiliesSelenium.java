@@ -13,7 +13,7 @@ import programs.TestBase;
 public class utiliesSelenium extends TestBase {
 	
 	public void waitelement(WebElement ele) {
-		WebDriverWait wait = new WebDriverWait(driver, 100);
+		WebDriverWait wait = new WebDriverWait(driver, 500);
 		 wait.until(ExpectedConditions.elementToBeClickable(ele));
 	}
 	

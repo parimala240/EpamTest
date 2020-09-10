@@ -10,7 +10,7 @@ public class Hooks_StepDefinition {
 	
 @Before
 public void setUP(){
-	System.out.println("launch FF");
+	System.out.println("Launch Browser");
 	System.out.println("Enter URL for MakeMyTrip");
 }
 
