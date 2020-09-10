@@ -49,7 +49,7 @@ public class LoginStepDefinition extends TestBase{
 	
 	 @Then("^user enters sourceDestination\"([^\"]*)\" and \"([^\"]*)\" and \"([^\"]*)\"$")
 	 public void user_enters_sourceDestination_and(String from, String to, String loginPhoneNumber) throws Throwable {
-		 System.out.println("enter------------");
+		 System.out.println("enter page");
 		 Homepageobjects home = PageFactory.initElements(driver, Homepageobjects.class);
 		 
 		 utill.waitelement(home.from);
@@ -57,13 +57,17 @@ public class LoginStepDefinition extends TestBase{
 		//static wait required 
 		 try {
 		 home.from.click();
+		 
 		 }catch (Exception e) {
 			 try {
+				 System.out.println("enter login page");
 				 loginentries(loginPhoneNumber,home);
+				 Thread.sleep(50000);
 			 }catch (Exception e1) {} 
+			 utill.waitelement(home.from);
+			 home.from.click();
 		}
-		 utill.waitelement(home.from);
-		 home.from.click();
+		 
 		 int noOfPlaces=home.places.size();
 		 for(int i=1;i<=noOfPlaces;i++) {
 			if( driver.findElement(By.xpath(home.placesSet.replace("INDEX", String.valueOf(i)))).getText().contains(from)) {
@@ -91,7 +95,11 @@ public class LoginStepDefinition extends TestBase{
 			home.login.click();
 			home.userid.sendKeys(loginPhoneNumber);
 			home.continue1.click();
-			Thread.sleep(5000);
+			JavascriptExecutor javascript = (JavascriptExecutor) driver;
+			javascript.executeScript("alert('Enter otp or else tap on webpage for closeb the login promt');");
+			Thread.sleep(20000);
+			WebDriverWait wait = new WebDriverWait(driver, 500);
+            wait.until(ExpectedConditions.elementToBeClickable(home.loginbutton));
 			home.loginbutton.click();
 			
 		}
