@@ -1,6 +1,7 @@
 package stepDefinitions;
 
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -29,12 +30,14 @@ public class LoginStepDefinition extends TestBase{
 	}
 
 	utiliesSelenium utill = new utiliesSelenium();
+	public static Logger APPLICATION_LOGS = null;
 	
 	@Given("^user is already on Login Page\"([^\"]*)\"$")
 	public void user_is_already_on_Login_Page_and(String browser) throws Throwable {
 	     initConfig();
 		initBrowser(browser);
 		invokeApplication();
+		APPLICATION_LOGS.info("Browser lanched with URL");
 	 }
 	
 	
@@ -42,6 +45,7 @@ public class LoginStepDefinition extends TestBase{
 	 public void title_of_login_page_is_free_CRM(){
 	 String title = driver.getTitle();
 	 System.out.println(title);
+	 APPLICATION_LOGS.info("Titel validation");
 	  //Assert.assertEquals("MakeMyTrip - #1 Travel Website 50% OFF on Hotels, Flights & Holiday", title);
 	 }
 	
@@ -75,6 +79,7 @@ public class LoginStepDefinition extends TestBase{
 				break;
 			}
 		 }
+		 APPLICATION_LOGS.info("From filed enterd and validation");
 		 //static wait required 
 		 Thread.sleep(2000);
 		 for(int i=1;i<=noOfPlaces;i++) {
@@ -83,10 +88,11 @@ public class LoginStepDefinition extends TestBase{
 					break;
 				}
 			 }
+		 APPLICATION_LOGS.info("TO filed enterd and validation");
 		 Thread.sleep(2000);
 		 home.date.click();
 		 home.search.click();
-		 
+		 APPLICATION_LOGS.info("Search Started--");
 	 }
 	
 
@@ -111,6 +117,7 @@ public class LoginStepDefinition extends TestBase{
 		Homepageobjects home = PageFactory.initElements(driver, Homepageobjects.class);
 		 utill.waitelementVisibility(home.flightsFrom, 100);
 		 utill. scrollPageEnd();
+		 APPLICATION_LOGS.info("PageScroll donet to collect the List of flights");
 	
 	 }
 	
@@ -130,6 +137,7 @@ public class LoginStepDefinition extends TestBase{
 	 @Then("^Close the browser$")
 	 public void close_the_browser(){
 		 driver.quit();
+		 APPLICATION_LOGS.info("Close the browser");
 	 }
 	
 	
