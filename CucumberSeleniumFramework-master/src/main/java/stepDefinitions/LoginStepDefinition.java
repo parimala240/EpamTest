@@ -37,7 +37,7 @@ public class LoginStepDefinition extends TestBase{
 	     initConfig();
 		initBrowser(browser);
 		invokeApplication();
-		APPLICATION_LOGS.info("Browser lanched with URL");
+		//APPLICATION_LOGS.info("Browser lanched with URL");
 	 }
 	
 	
@@ -45,7 +45,7 @@ public class LoginStepDefinition extends TestBase{
 	 public void title_of_login_page_is_free_CRM(){
 	 String title = driver.getTitle();
 	 System.out.println(title);
-	 APPLICATION_LOGS.info("Titel validation");
+	 //APPLICATION_LOGS.info("Titel validation");
 	  //Assert.assertEquals("MakeMyTrip - #1 Travel Website 50% OFF on Hotels, Flights & Holiday", title);
 	 }
 	
@@ -79,7 +79,7 @@ public class LoginStepDefinition extends TestBase{
 				break;
 			}
 		 }
-		 APPLICATION_LOGS.info("From filed enterd and validation");
+		 //APPLICATION_LOGS.info("From filed enterd and validation");
 		 //static wait required 
 		 Thread.sleep(2000);
 		 for(int i=1;i<=noOfPlaces;i++) {
@@ -88,11 +88,11 @@ public class LoginStepDefinition extends TestBase{
 					break;
 				}
 			 }
-		 APPLICATION_LOGS.info("TO filed enterd and validation");
+		 //APPLICATION_LOGS.info("TO filed enterd and validation");
 		 Thread.sleep(2000);
 		 home.date.click();
 		 home.search.click();
-		 APPLICATION_LOGS.info("Search Started--");
+		 //APPLICATION_LOGS.info("Search Started--");
 	 }
 	
 
@@ -117,7 +117,7 @@ public class LoginStepDefinition extends TestBase{
 		Homepageobjects home = PageFactory.initElements(driver, Homepageobjects.class);
 		 utill.waitelementVisibility(home.flightsFrom, 100);
 		 utill. scrollPageEnd();
-		 APPLICATION_LOGS.info("PageScroll donet to collect the List of flights");
+		 //APPLICATION_LOGS.info("PageScroll donet to collect the List of flights");
 	
 	 }
 	
@@ -137,7 +137,7 @@ public class LoginStepDefinition extends TestBase{
 	 @Then("^Close the browser$")
 	 public void close_the_browser(){
 		 driver.quit();
-		 APPLICATION_LOGS.info("Close the browser");
+		 //APPLICATION_LOGS.info("Close the browser");
 	 }
 	
 	
