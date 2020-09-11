@@ -15,6 +15,22 @@
 	</properties>
 
 	 <dependencies>
+	 
+	 
+<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-safari-driver -->
+<!-- <dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-safari-driver</artifactId>
+    <version>2.52.0</version>
+</dependency> -->
+
+
+<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
+<!-- <dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-chrome-driver</artifactId>
+    <version>3.141.59</version>
+</dependency> -->
 
 <dependency>
     <groupId>info.cukes</groupId>
@@ -75,9 +91,10 @@
     <scope>compile</scope>
 </dependency> -->
 
+
   </dependencies>
   
-	<build>
+  <build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
