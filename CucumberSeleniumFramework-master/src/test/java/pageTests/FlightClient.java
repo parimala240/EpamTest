@@ -30,7 +30,7 @@ public class FlightClient {
 	 * Book the flight based on filtered details of flight requirements 
 	 */
 	public  void chooseFlight() throws InterruptedException {
-		
+		try {
 		Homepageobjects home = PageFactory.initElements(driver, Homepageobjects.class);
 		
 		int size =home.listFilghts.size();
@@ -78,12 +78,17 @@ public class FlightClient {
 			}
 		
 		}
+		 }catch (Exception e) {
+				//APPLICATION_LOGS.info(e+"failure at scroll the flight filter page");
+				 System.out.println(e+"failure at filter the filght & booking flight process");
+			 }
 
 	}
 	/*
 	 *  Filter the list of objects based on cost and time of flight 
 	 */
 	public String filterFlightDetails(List<FlightDetails> flightDetailsList) {
+		try {
 		int totalTimeTaken = flightDetailsList.stream()
 				.min(Comparator.comparing(FlightDetails::getfilghtsTravalDuration)).get().getfilghtsTravalDuration();
 
@@ -112,5 +117,11 @@ public class FlightClient {
 		flightCode1 = collect1.get(0).getfilghtsCode();
 		
 		return flightCode1;
+		}catch (Exception e) {
+			//APPLICATION_LOGS.info(e+"failure at scroll the flight filter page");
+			 System.out.println(e+"failure at filter the filght  process");
+			 return null;
+		 }
+		
 	}
 }

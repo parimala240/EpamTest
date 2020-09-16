@@ -53,6 +53,7 @@ public class LoginStepDefinition extends TestBase{
 	
 	 @Then("^user enters sourceDestination\"([^\"]*)\" and \"([^\"]*)\" and \"([^\"]*)\"$")
 	 public void user_enters_sourceDestination_and(String from, String to, String loginPhoneNumber) throws Throwable {
+		 try {
 		 System.out.println("enter page");
 		 Homepageobjects home = PageFactory.initElements(driver, Homepageobjects.class);
 		 
@@ -93,11 +94,16 @@ public class LoginStepDefinition extends TestBase{
 		 home.date.click();
 		 home.search.click();
 		 //APPLICATION_LOGS.info("Search Started--");
+		 }catch (Exception e) {
+			//APPLICATION_LOGS.info(e+"failure at From to selection fields");
+			 System.out.println(e+"failure at From to selection fields");
+		 }
 	 }
 	
 
 	 public void loginentries(String loginPhoneNumber, Homepageobjects home) throws InterruptedException {
 		 //Homepageobjects home = PageFactory.initElements(driver, Homepageobjects.class);
+		 try {
 			home.login.click();
 			home.userid.sendKeys(loginPhoneNumber);
 			home.continue1.click();
@@ -107,17 +113,26 @@ public class LoginStepDefinition extends TestBase{
 			WebDriverWait wait = new WebDriverWait(driver, 500);
             wait.until(ExpectedConditions.elementToBeClickable(home.loginbutton));
 			home.loginbutton.click();
+		 }catch (Exception e) {
+			//APPLICATION_LOGS.info(e+"failure at login page");
+			 System.out.println(e+"failure at login page");
+		 }
 			
 		}
 
 
 	@And("^user clicks on pageScroll$")
     public void user_clicks_on_pageScroll() throws Throwable {
-		 
+		 try {
 		Homepageobjects home = PageFactory.initElements(driver, Homepageobjects.class);
 		 utill.waitelementVisibility(home.flightsFrom, 100);
 		 utill. scrollPageEnd();
+		 
 		 //APPLICATION_LOGS.info("PageScroll donet to collect the List of flights");
+		 }catch (Exception e) {
+				//APPLICATION_LOGS.info(e+"failure at scroll the flight filter page");
+				 System.out.println(e+"failure at sctoll the flight filter page");
+			 }
 	
 	 }
 	
